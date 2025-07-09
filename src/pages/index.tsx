@@ -21,7 +21,6 @@ export default function Index() {
                     <Link
                         to={`/${dinosaur.name.toLowerCase()}`}
                         key={dinosaur.name}
-                        className="dinosaur"
                     >
                         {dinosaur.name}
                     </Link>

@@ -1,42 +1,163 @@
+/* Modern, clean styles for the Dinosaur Tutorial App */
+
 #root {
-  max-width: 1280px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Main layout */
+main {
   text-align: center;
+  animation: fadeIn 0.6s ease-in;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #646cff, #61dafb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
 }
 
-@keyframes logo-spin {
+p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Link styling for dinosaur list */
+main a {
+  display: block;
+  padding: 1rem 1.5rem;
+  margin: 0.5rem 0;
+  text-decoration: none;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  color: #495057;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main a:hover {
+  background: linear-gradient(135deg, #646cff, #535bf2);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.3);
+  border-color: #646cff;
+}
+
+main a:active {
+  transform: translateY(0);
+}
+
+/* Individual dinosaur page styling */
+div h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+div p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  background: rgba(100, 108, 255, 0.05);
+  border-left: 4px solid #646cff;
+  border-radius: 8px;
+  text-align: left;
+}
+
+/* Back link styling */
+div > a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: #f8f9fa;
+  color: #646cff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+div > a:hover {
+  background: #646cff;
+  color: white;
+  transform: translateX(-4px);
+}
+
+/* Animations */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Responsive design */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  main a {
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  div h1 {
+    font-size: 2.25rem;
+  }
+  
+  div p {
+    font-size: 1.1rem;
+    padding: 1.25rem;
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  main a {
+    background: linear-gradient(135deg, #2d3748, #4a5568);
+    color: #e2e8f0;
+    border-color: #4a5568;
+  }
+  
+  main a:hover {
+    background: linear-gradient(135deg, #646cff, #535bf2);
+    color: white;
+  }
+  
+  p {
+    color: #cbd5e0;
+  }
+  
+  div p {
+    background: rgba(100, 108, 255, 0.1);
+    color: #e2e8f0;
+  }
+  
+  div > a {
+    background: #2d3748;
+    color: #646cff;
+    border-color: #4a5568;
+  }
 }
