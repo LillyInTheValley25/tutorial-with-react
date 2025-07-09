@@ -1,54 +1,99 @@
-# React + TypeScript + Vite
+# Dinosaur App - Deno with React Tutorial
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A tutorial project demonstrating how to build and run a modern React application using Deno as the runtime. This dinosaur encyclopedia showcases the integration of React, TypeScript, Vite, and Deno in a full-stack application.
 
-Currently, two official plugins are available:
+**This is an educational tutorial designed to help developers understand how to set up and run React projects with Deno**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- 🦕 Browse a comprehensive list of dinosaurs
+- 📖 View detailed descriptions for each dinosaur species
+- 🚀 Fast and responsive user interface
+- 🔍 Clean, modern design with React Router navigation
+- ⚡ Hot module replacement (HMR) for development
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Runtime**: Deno (instead of Node.js)
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: Deno + Oak Framework
+- **Routing**: React Router DOM
+- **Development**: Hot Module Replacement (HMR)
+- **Linting**: ESLint with TypeScript support
+
+## Getting Started
+
+### Prerequisites
+
+- [Deno](https://deno.com/) (latest version) - **Note: Node.js is NOT required for this project**
+
+### Tutorial Steps
+
+1. **Clone this repository** to follow along with the tutorial
+2. **Navigate to the project directory**
+3. **Explore the project structure** to understand how Deno integrates with React
+4. **Start the development servers:**
+
+```bash
+deno task dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This will start both the API server (port 8000) and the Vite dev server (port 5173).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Alternatively, you can start them separately:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+# Start the API server
+deno task dev:api
+
+# Start the frontend dev server
+deno task dev:vite
 ```
+
+### Available Scripts
+
+- `deno task dev` - Start both API and frontend servers
+- `deno task dev:api` - Start only the API server
+- `deno task dev:vite` - Start only the frontend dev server
+- `deno task build` - Build the app for production
+- `deno task lint` - Run ESLint
+- `deno task preview` - Preview the production build
+
+## Project Structure
+
+```text
+├── api/
+│   ├── main.ts          # Deno API server with Oak
+│   └── data.json        # Dinosaur data
+├── src/
+│   ├── pages/
+│   │   ├── index.tsx    # Homepage with dinosaur list
+│   │   └── Dinosaur.tsx # Individual dinosaur details
+│   ├── types.ts         # TypeScript type definitions
+│   └── ...
+├── deno.json           # Deno configuration
+├── package.json        # NPM dependencies for frontend
+└── vite.config.ts      # Vite configuration
+```
+
+## Tutorial Highlights
+
+### Key Deno Features Demonstrated
+
+1. **deno.json Configuration**: See how Deno replaces package.json for task management
+2. **TypeScript Native Support**: No build step required for TypeScript in the backend
+3. **Permission Model**: API server runs with specific permissions (--allow-net, --allow-read)
+4. **Modern Import Maps**: Direct URL imports and import maps for dependency management
+5. **Vite Integration**: How Vite proxy works with Deno backend services
+
+### Learning Notes
+
+- The `api/main.ts` file shows a Deno server using Oak framework
+- Vite configuration includes proxy settings to communicate with the Deno API
+- Both frontend and backend are managed through Deno tasks, not npm scripts
+- This demonstrates how Deno can replace Node.js entirely in full-stack JavaScript development
+
+## API Endpoints
+
+- `GET /api/dinosaurs` - Get all dinosaurs
+- `GET /api/dinosaurs/:name` - Get a specific dinosaur by name
