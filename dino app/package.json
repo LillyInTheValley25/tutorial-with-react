@@ -1,20 +1,17 @@
 {
-  "name": "react-proj",
+  "name": "dino-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "deno task dev:api & deno task dev:vite",
-    "dev:api": "deno run --allow-env --allow-net --allow-read api/main.ts",
-    "dev:vite": "deno run -A npm:vite",
+    "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.3"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
