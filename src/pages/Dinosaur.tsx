@@ -17,7 +17,7 @@ export default function Dinosaur() {
         <div>
             <h1>{dinosaur.name}</h1>
             <p>{dinosaur.description}</p>
-            <Link to="/">🠠 Back to all dinosaurs</Link>
+            <Link to="/" className="btn-secondary">Back to all dinosaurs</Link>
         </div>
     );
 }

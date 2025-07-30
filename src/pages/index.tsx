@@ -16,12 +16,12 @@ export default function Index() {
         <main>
             <h1>🦕 Dinosaur app</h1>
             <p>Click on a dinosaur below to learn more.</p>
-            {dinosaurs.map((dinosaur: {name: string; description: string}) => {
+            {dinosaurs.map((dinosaur: { name: string; description: string }) => {
                 return (
                     <Link
                         to={`/${dinosaur.name.toLowerCase()}`}
                         key={dinosaur.name}
-                        className="dinosaur"
+                        className="btn-primary"
                     >
                         {dinosaur.name}
                     </Link>
