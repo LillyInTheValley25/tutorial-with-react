@@ -12,7 +12,7 @@ Currently, two official plugins are available:
 You can deploy your own version of this React app to Deno Deploy immediately.
 Just click the button to clone and deploy.
 
-[![Deploy on Deno](https://deno.com/button)](https://app.deno.com/new?clone=https://github.com/denoland/tutorial-with-react)
+[![Deploy on Deno](https://deno.com/button)](https://app.deno.com/new?clone=https://github.com/denoland/tutorial-with-react&mode=dynamic&entrypoint=api/main.ts&build=deno+task+build&install=deno+install)
 
 ## Expanding the ESLint configuration
 
