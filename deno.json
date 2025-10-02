@@ -1,9 +1,11 @@
 {
     "tasks": {
-        "dev": "deno run -A npm:vite & deno run server:start",
+        "dev": "deno run -A npm:vite & ./run_django.sh",
+        "dev-frontend": "deno run -A npm:vite",
+        "dev-backend": "./run_django.sh",
         "build": "deno run -A npm:vite build",
-        "server:start": "deno run -A --watch ./api/main.ts",
-        "serve": "deno run build && deno run server:start"
+        "server:start": "./run_django.sh",
+        "serve": "deno run build && ./run_django.sh"
     },
     "imports": {
         "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.4",

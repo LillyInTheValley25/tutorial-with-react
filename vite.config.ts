@@ -4,8 +4,12 @@ import "react";
 import "react-dom";
 import deno from "@deno/vite-plugin";
 
-
 export default defineConfig({
+  root: ".",
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+  },
   server: {
     port: 3000,
     proxy: {
