@@ -1,5 +1,8 @@
 ## Quick Start
 
-deno task build - to build frontend
+to build frontend:
+`deno task build`
+
 then
-./run_django.sh
+
+`./run_django.sh`
